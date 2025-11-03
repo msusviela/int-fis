@@ -1,5 +1,5 @@
 export class Recipe {
-  constructor(name, ingredients = [], difficulty = "fácil") {
+  constructor(name, ingredients = []) {
     this.name = name;
     this.ingredients = ingredients;
   }
@@ -12,20 +12,7 @@ export class Recipe {
     return this.ingredients;
   }
 
-  getDifficulty() {
-    // TODO: implementar getDifficulty()
-    throw new Error("TODO: implementar getDifficulty()");
-  }
-
-  setDifficulty(value) {
-    // TODO: validar que value sea "fácil", "media" o "difícil" y asignar
-    // Sugerencia: normalizar tildes/mayúsculas si desea permitir variantes
-    throw new Error("TODO: implementar setDifficulty(value)");
-  }
-
   toString() {
-    // TODO: incluir la dificultad en el string, por ejemplo:
-    // "Nombre (dificultad) - Ingredientes: x, y, z"
-    throw new Error("TODO: implementar toString()");
+    return `${this.name} - Ingredientes: ${this.ingredients.join(", ")}`;
   }
 }

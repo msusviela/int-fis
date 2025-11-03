@@ -2,8 +2,7 @@ export class Recipe {
   constructor(name, ingredients = [], difficulty = "fácil") {
     this.name = name;
     this.ingredients = ingredients;
-    // TODO: inicializar dificultad usando setDifficulty cuando esté implementado
-    this.difficulty = undefined;
+    this.difficulty = difficulty;
   }
 
   getName() {

@@ -2,7 +2,6 @@ export class Recipe {
   constructor(name, ingredients = [], difficulty = "fácil") {
     this.name = name;
     this.ingredients = ingredients;
-    this.difficulty = difficulty;
   }
 
   getName() {

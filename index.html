@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recetario Personal 🍳</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container mt-4">
+    <h1 class="mb-4">📖 Mi Recetario</h1>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link fs-4 active"
+          id="inicio-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#inicio"
+          type="button"
+          role="tab"
+          aria-controls="inicio"
+          aria-selected="true"
+        >
+          Inicio
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link fs-4"
+          id="facil-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#facil"
+          type="button"
+          role="tab"
+          aria-controls="facil"
+          aria-selected="false"
+        >
+          Fácil
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link fs-4"
+          id="media-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#media"
+          type="button"
+          role="tab"
+          aria-controls="media"
+          aria-selected="false"
+        >
+          Media
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link fs-4"
+          id="dificil-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#dificil"
+          type="button"
+          role="tab"
+          aria-controls="dificil"
+          aria-selected="false"
+        >
+          Difícil
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link fs-4"
+          id="nueva-receta-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nueva-receta"
+          type="button"
+          role="tab"
+          aria-controls="nueva-receta"
+          aria-selected="false"
+        >
+          Nueva receta
+        </button>
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- Tab Inicio -->
+      <div
+        class="tab-pane m-3 active"
+        id="inicio"
+        role="tabpanel"
+        aria-labelledby="inicio-tab"
+        tabindex="0"
+      >
+        <label for="inp-total-by-difficulty" class="form-label fs-5">
+          Total recetas por dificultad:
+          <input
+            type="text"
+            id="inp-total-by-difficulty"
+            class="form-control mt-2"
+            readonly
+          />
+        </label>
+      </div>
+
+      <!-- Tab Fácil -->
+      <div
+        class="tab-pane m-3"
+        id="facil"
+        role="tabpanel"
+        aria-labelledby="facil-tab"
+        tabindex="1"
+      >
+        <p id="empty-facil-list" class="fs-4 text-muted">No hay recetas fáciles aún.</p>
+        <div id="facil-list-container" class="container d-none">
+          <div id="facil-list" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3"></div>
+        </div>
+      </div>
+
+      <!-- Tab Media -->
+      <div
+        class="tab-pane m-3"
+        id="media"
+        role="tabpanel"
+        aria-labelledby="media-tab"
+        tabindex="2"
+      >
+        <p id="empty-media-list" class="fs-4 text-muted">No hay recetas medianas aún.</p>
+        <div id="media-list-container" class="container d-none">
+          <div id="media-list" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3"></div>
+        </div>
+      </div>
+
+      <!-- Tab Difícil -->
+      <div
+        class="tab-pane m-3"
+        id="dificil"
+        role="tabpanel"
+        aria-labelledby="dificil-tab"
+        tabindex="3"
+      >
+        <p id="empty-dificil-list" class="fs-4 text-muted">No hay recetas difíciles aún.</p>
+        <div id="dificil-list-container" class="container d-none">
+          <div id="dificil-list" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3"></div>
+        </div>
+      </div>
+
+      <!-- Tab Nueva Receta -->
+      <div
+        class="tab-pane m-3"
+        id="nueva-receta"
+        role="tabpanel"
+        aria-labelledby="nueva-receta-tab"
+        tabindex="4"
+      >
+        <form id="recipe-form">
+          <div class="mb-3">
+            <label for="inp-name" class="form-label">Nombre de la receta</label>
+            <input type="text" id="inp-name" class="form-control" required />
+          </div>
+          
+          <div class="mb-3">
+            <label for="inp-ingredients" class="form-label">Ingredientes (separados por coma)</label>
+            <input
+              type="text"
+              id="inp-ingredients"
+              class="form-control"
+              placeholder="Ej: tomate, cebolla, ajo"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="sel-difficulty" class="form-label">Dificultad</label>
+            <select id="sel-difficulty" class="form-select" required>
+              <option value="">Seleccione una dificultad</option>
+              <option value="fácil">Fácil</option>
+              <option value="media">Media</option>
+              <option value="difícil">Difícil</option>
+            </select>
+          </div>
+
+          <div class="d-none" id="add-error-container">
+            <p class="text-danger pt-2" id="add-error-msg"></p>
+          </div>
+
+          <div class="form-row">
+            <button type="submit" class="btn btn-primary" id="btn-add">
+              Agregar Receta
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>

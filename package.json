@@ -1,0 +1,20 @@
+{
+  "name": "int",
+  "version": "1.0.0",
+  "description": "- Implementar nuevas funciones de lógica de dominio   - Codificar test unitarios en paralelo a la implementación   - Usar buenas prácticas de codificación   - Modificar la interfaz de usuario para usar las nuevas funciones",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "eslint": "^9.39.0",
+    "globals": "^16.5.0",
+    "jest": "^29.7.0"
+  }
+}
